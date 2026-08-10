@@ -1,0 +1,1451 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#082f3d">
+  <meta name="description" content="Ofoten Rør i Narvik leverer rørleggertjenester, komplette bad, våtrom, varmeløsninger og faglig rådgivning for bolig, hytte og næring.">
+  <title>Ofoten Rør | Bad, rør og VVS i Narvik</title>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23082f3d'/%3E%3Cpath d='M32 9C23 22 17 29 17 39a15 15 0 0 0 30 0c0-10-6-17-15-30Z' fill='%2354c7d7'/%3E%3Cpath d='M25 40c1 5 5 8 10 8' fill='none' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <!--
+    ENKEL GITHUB-PAGES-NETTSIDE FOR OFOTEN RØR
+    Alt er samlet i denne ene index.html-filen.
+    Bytt gjerne tekstlogoen med bedriftens offisielle logo før publisering.
+  -->
+
+  <style>
+    :root {
+      --navy: #082f3d;
+      --navy-2: #0b4657;
+      --water: #178ba5;
+      --water-light: #54c7d7;
+      --ice: #e9f5f7;
+      --sand: #e4ad69;
+      --paper: #f7faf9;
+      --white: #ffffff;
+      --ink: #102b36;
+      --muted: #546d77;
+      --line: rgba(8, 47, 61, 0.13);
+      --shadow: 0 22px 60px rgba(8, 47, 61, 0.14);
+      --shadow-small: 0 10px 32px rgba(8, 47, 61, 0.08);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body.menu-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img, svg { display: block; max-width: 100%; }
+    button, input, textarea, select { font: inherit; }
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1, h2, h3, .wordmark { letter-spacing: -0.035em; }
+
+    h1 {
+      max-width: 780px;
+      margin-bottom: 24px;
+      color: var(--white);
+      font-size: clamp(3.2rem, 7.2vw, 6.5rem);
+      line-height: 0.94;
+      text-wrap: balance;
+    }
+
+    h2 {
+      margin-bottom: 18px;
+      font-size: clamp(2.25rem, 4.5vw, 4.1rem);
+      line-height: 1.02;
+      text-wrap: balance;
+    }
+
+    h3 {
+      margin-bottom: 12px;
+      font-size: 1.45rem;
+      line-height: 1.2;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--sand);
+      outline-offset: 4px;
+    }
+
+    ::selection { color: var(--white); background: var(--water); }
+
+    .skip-link {
+      position: fixed;
+      z-index: 9999;
+      top: 12px;
+      left: 12px;
+      padding: 10px 15px;
+      color: var(--white);
+      background: var(--navy);
+      border-radius: 10px;
+      transform: translateY(-180%);
+      transition: transform 180ms ease;
+    }
+
+    .skip-link:focus { transform: translateY(0); }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin-inline: auto;
+    }
+
+    .section { padding: 108px 0; }
+    .section--small { padding: 76px 0; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--water);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 26px;
+      height: 2px;
+      content: "";
+      background: currentColor;
+      border-radius: 999px;
+    }
+
+    .eyebrow--light { color: var(--water-light); }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 48px;
+    }
+
+    .section-heading p {
+      max-width: 680px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 21px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 850;
+      line-height: 1.1;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn svg { width: 19px; height: 19px; flex: 0 0 auto; }
+
+    .btn--primary {
+      color: var(--navy);
+      background: var(--sand);
+      box-shadow: 0 12px 30px rgba(228, 173, 105, 0.24);
+    }
+
+    .btn--primary:hover { background: #efbd7e; }
+
+    .btn--ghost {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.34);
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn--ghost:hover { background: rgba(255, 255, 255, 0.14); }
+
+    .btn--dark { color: var(--white); background: var(--navy); }
+    .btn--dark:hover { background: var(--navy-2); box-shadow: var(--shadow-small); }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--navy);
+      font-weight: 850;
+    }
+
+    .text-link svg { width: 18px; height: 18px; transition: transform 180ms ease; }
+    .text-link:hover svg { transform: translateX(4px); }
+
+    /* Header */
+    .site-header {
+      position: fixed;
+      z-index: 1000;
+      inset: 0 0 auto;
+      padding: 14px 0;
+      color: var(--white);
+      border-bottom: 1px solid transparent;
+      transition: padding 180ms ease, background 180ms ease, box-shadow 180ms ease;
+    }
+
+    .site-header.scrolled,
+    .site-header.menu-active {
+      padding: 9px 0;
+      background: rgba(8, 47, 61, 0.95);
+      border-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.13);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav-shell {
+      display: flex;
+      min-height: 62px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: inline-flex;
+      min-width: max-content;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      color: var(--navy);
+      background: var(--water-light);
+      border-radius: 14px 14px 14px 4px;
+      box-shadow: 0 9px 20px rgba(0, 0, 0, 0.13);
+    }
+
+    .brand-mark svg { width: 25px; height: 25px; }
+
+    .wordmark {
+      font-size: 1.06rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .wordmark small {
+      display: block;
+      margin-top: 5px;
+      color: rgba(255, 255, 255, 0.66);
+      font-size: 0.61rem;
+      font-weight: 750;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-links a:not(.btn) {
+      position: relative;
+      padding: 8px 0;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 0.92rem;
+      font-weight: 750;
+    }
+
+    .nav-links a:not(.btn)::after {
+      position: absolute;
+      right: 0;
+      bottom: 2px;
+      left: 0;
+      height: 2px;
+      content: "";
+      background: var(--water-light);
+      border-radius: 999px;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 180ms ease;
+    }
+
+    .nav-links a:not(.btn):hover,
+    .nav-links a:not(.btn).active { color: var(--white); }
+
+    .nav-links a:not(.btn):hover::after,
+    .nav-links a:not(.btn).active::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 48px;
+      height: 48px;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      cursor: pointer;
+    }
+
+    .menu-toggle svg { width: 24px; height: 24px; }
+    .menu-toggle .close-icon { display: none; }
+    .menu-toggle[aria-expanded="true"] .menu-icon { display: none; }
+    .menu-toggle[aria-expanded="true"] .close-icon { display: block; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      display: grid;
+      min-height: 790px;
+      align-items: center;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 80% 28%, rgba(84, 199, 215, 0.2), transparent 28%),
+        radial-gradient(circle at 17% 82%, rgba(228, 173, 105, 0.11), transparent 22%),
+        linear-gradient(125deg, #062b38 0%, #083a4a 55%, #0b4b5c 100%);
+    }
+
+    .hero::before {
+      position: absolute;
+      inset: 0;
+      content: "";
+      opacity: 0.42;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 52px 52px;
+      mask-image: linear-gradient(to bottom, #000, transparent 90%);
+    }
+
+    .hero::after {
+      position: absolute;
+      right: -180px;
+      bottom: -290px;
+      width: 680px;
+      height: 680px;
+      content: "";
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 50%;
+      box-shadow: 0 0 0 80px rgba(255, 255, 255, 0.022), 0 0 0 160px rgba(255, 255, 255, 0.017);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      align-items: center;
+      gap: 58px;
+      grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+      padding-top: 120px;
+      padding-bottom: 96px;
+    }
+
+    .hero-copy > p {
+      max-width: 630px;
+      margin-bottom: 34px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: clamp(1.08rem, 1.7vw, 1.25rem);
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin-top: 24px;
+      color: rgba(255, 255, 255, 0.66);
+      font-size: 0.92rem;
+    }
+
+    .hero-note svg { width: 20px; height: 20px; color: var(--water-light); }
+
+    .hero-visual {
+      position: relative;
+      width: min(100%, 490px);
+      margin-left: auto;
+    }
+
+    .visual-card {
+      position: relative;
+      padding: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.09);
+      border-radius: 38px;
+      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.24);
+      backdrop-filter: blur(14px);
+      transform: rotate(1.2deg);
+    }
+
+    .bathroom-art {
+      overflow: hidden;
+      background: #dbecef;
+      border-radius: 28px;
+      aspect-ratio: 4 / 5;
+    }
+
+    .visual-badge {
+      position: absolute;
+      z-index: 3;
+      right: -20px;
+      bottom: 55px;
+      display: flex;
+      width: 160px;
+      min-height: 112px;
+      flex-direction: column;
+      justify-content: center;
+      padding: 22px;
+      color: var(--navy);
+      background: var(--white);
+      border-radius: 22px 22px 22px 7px;
+      box-shadow: var(--shadow);
+      transform: rotate(-2deg);
+    }
+
+    .visual-badge strong {
+      margin-bottom: 3px;
+      color: var(--water);
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .visual-badge span { font-size: 0.86rem; font-weight: 850; line-height: 1.25; }
+
+    .floating-drop {
+      position: absolute;
+      z-index: 4;
+      top: 34px;
+      left: -27px;
+      display: grid;
+      width: 72px;
+      height: 72px;
+      place-items: center;
+      color: var(--navy);
+      background: var(--water-light);
+      border-radius: 50% 50% 50% 12%;
+      box-shadow: var(--shadow);
+      transform: rotate(-20deg);
+    }
+
+    .floating-drop svg { width: 35px; height: 35px; transform: rotate(20deg); }
+
+    /* Trust */
+    .trust-strip { position: relative; z-index: 5; margin-top: -35px; }
+
+    .trust-grid {
+      display: grid;
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .trust-item {
+      display: flex;
+      min-height: 124px;
+      align-items: center;
+      gap: 15px;
+      padding: 24px 25px;
+      border-right: 1px solid var(--line);
+    }
+
+    .trust-item:last-child { border-right: 0; }
+
+    .trust-icon {
+      display: grid;
+      width: 46px;
+      height: 46px;
+      flex: 0 0 auto;
+      place-items: center;
+      color: var(--water);
+      background: var(--ice);
+      border-radius: 14px;
+    }
+
+    .trust-icon svg { width: 23px; height: 23px; }
+    .trust-item strong { display: block; margin-bottom: 2px; color: var(--navy); line-height: 1.15; }
+    .trust-item span { display: block; color: var(--muted); font-size: 0.82rem; line-height: 1.35; }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .service-card {
+      position: relative;
+      min-height: 330px;
+      overflow: hidden;
+      padding: 38px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-small);
+      transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+    }
+
+    .service-card:hover {
+      border-color: rgba(23, 139, 165, 0.34);
+      box-shadow: var(--shadow);
+      transform: translateY(-5px);
+    }
+
+    .service-card.featured {
+      color: var(--white);
+      border-color: transparent;
+      background: radial-gradient(circle at 90% 10%, rgba(84, 199, 215, 0.28), transparent 30%), var(--navy);
+    }
+
+    .service-card.featured p { color: rgba(255, 255, 255, 0.72); }
+    .service-card.featured .service-icon { color: var(--navy); background: var(--water-light); }
+    .service-card.featured .text-link { color: var(--white); }
+
+    .service-icon {
+      display: grid;
+      width: 58px;
+      height: 58px;
+      margin-bottom: 52px;
+      place-items: center;
+      color: var(--water);
+      background: var(--ice);
+      border-radius: 18px;
+    }
+
+    .service-icon svg { width: 30px; height: 30px; }
+    .service-card h3 { max-width: 380px; font-size: 1.6rem; }
+    .service-card p { max-width: 520px; margin-bottom: 23px; color: var(--muted); }
+
+    .service-number {
+      position: absolute;
+      top: 24px;
+      right: 28px;
+      color: rgba(8, 47, 61, 0.12);
+      font-size: 4.7rem;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.08em;
+    }
+
+    .service-card.featured .service-number { color: rgba(255, 255, 255, 0.1); }
+
+    /* About */
+    .about { overflow: hidden; background: var(--ice); }
+
+    .about-grid {
+      display: grid;
+      align-items: center;
+      gap: 72px;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    }
+
+    .about-visual { position: relative; min-height: 560px; }
+
+    .pipe-panel {
+      position: absolute;
+      inset: 0 68px 66px 0;
+      overflow: hidden;
+      background: var(--navy);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .about-stat {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 53%;
+      padding: 27px;
+      color: var(--navy);
+      background: var(--sand);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .about-stat strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: clamp(2.5rem, 5vw, 4.4rem);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+    }
+
+    .about-stat span { display: block; font-weight: 850; line-height: 1.3; }
+    .about-copy > p { color: var(--muted); font-size: 1.06rem; }
+
+    .check-list {
+      display: grid;
+      gap: 14px;
+      margin: 30px 0 35px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--navy);
+      font-weight: 760;
+    }
+
+    .check-list svg { width: 22px; height: 22px; flex: 0 0 auto; margin-top: 2px; color: var(--water); }
+
+    /* Process */
+    .process-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .process-step {
+      position: relative;
+      min-height: 270px;
+      padding: 30px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      border-radius: var(--radius);
+    }
+
+    .process-step::after {
+      position: absolute;
+      z-index: 2;
+      top: 52px;
+      right: -20px;
+      width: 38px;
+      height: 1px;
+      content: "";
+      background: var(--water-light);
+    }
+
+    .process-step:last-child::after { display: none; }
+
+    .step-number {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 52px;
+      place-items: center;
+      color: var(--white);
+      background: var(--navy);
+      border-radius: 50%;
+      font-weight: 900;
+      box-shadow: 0 0 0 8px var(--ice);
+    }
+
+    .process-step p { margin-bottom: 0; color: var(--muted); font-size: 0.94rem; }
+
+    /* Showroom */
+    .showroom-card {
+      position: relative;
+      display: grid;
+      min-height: 430px;
+      align-items: center;
+      gap: 50px;
+      overflow: hidden;
+      padding: 66px;
+      color: var(--white);
+      background: radial-gradient(circle at 82% 35%, rgba(84, 199, 215, 0.28), transparent 27%), linear-gradient(125deg, var(--navy), #0b5365);
+      border-radius: 38px;
+      box-shadow: var(--shadow);
+      grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+    }
+
+    .showroom-card::after {
+      position: absolute;
+      right: -120px;
+      bottom: -230px;
+      width: 560px;
+      height: 560px;
+      content: "";
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      box-shadow: 0 0 0 70px rgba(255, 255, 255, 0.025), 0 0 0 140px rgba(255, 255, 255, 0.018);
+    }
+
+    .showroom-copy, .showroom-facts { position: relative; z-index: 2; }
+    .showroom-copy p { max-width: 640px; margin-bottom: 28px; color: rgba(255, 255, 255, 0.73); font-size: 1.08rem; }
+    .showroom-facts { display: grid; gap: 12px; }
+
+    .showroom-fact {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 17px 19px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.075);
+      border-radius: 17px;
+      backdrop-filter: blur(10px);
+    }
+
+    .showroom-fact svg { width: 24px; height: 24px; flex: 0 0 auto; color: var(--water-light); }
+    .showroom-fact span { font-size: 0.95rem; font-weight: 760; }
+
+    /* Contact */
+    .contact { background: var(--white); }
+
+    .contact-grid {
+      display: grid;
+      align-items: stretch;
+      gap: 22px;
+      grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+    }
+
+    .contact-info, .form-shell {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-small);
+    }
+
+    .contact-info { padding: 42px; color: var(--white); background: var(--navy); }
+    .contact-info h2 { margin-bottom: 18px; font-size: clamp(2.1rem, 4vw, 3.5rem); }
+    .contact-info > p { margin-bottom: 36px; color: rgba(255, 255, 255, 0.69); }
+
+    .contact-list {
+      display: grid;
+      gap: 13px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .contact-list a,
+    .contact-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      padding: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      transition: background 180ms ease, border-color 180ms ease;
+    }
+
+    .contact-list a:hover { border-color: rgba(84, 199, 215, 0.55); background: rgba(255, 255, 255, 0.1); }
+    .contact-list svg { width: 23px; height: 23px; flex: 0 0 auto; margin-top: 2px; color: var(--water-light); }
+    .contact-list strong { display: block; margin-bottom: 2px; font-size: 0.82rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    .contact-list span { display: block; color: rgba(255, 255, 255, 0.72); font-size: 0.93rem; line-height: 1.45; }
+
+    .form-shell { padding: 42px; background: var(--paper); }
+    .form-shell h3 { margin-bottom: 8px; font-size: 1.9rem; }
+    .form-intro { margin-bottom: 28px; color: var(--muted); }
+
+    .form-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .field { display: grid; gap: 7px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { color: var(--navy); font-size: 0.86rem; font-weight: 850; }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      color: var(--ink);
+      border: 1px solid rgba(8, 47, 61, 0.18);
+      outline: 0;
+      background: var(--white);
+      border-radius: 13px;
+      transition: border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .field input, .field select { min-height: 52px; padding: 0 15px; }
+    .field textarea { min-height: 135px; padding: 14px 15px; resize: vertical; }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--water);
+      box-shadow: 0 0 0 4px rgba(23, 139, 165, 0.12);
+    }
+
+    .form-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .form-note { max-width: 360px; margin: 0; color: var(--muted); font-size: 0.78rem; line-height: 1.45; }
+
+    /* Footer */
+    .site-footer { padding: 38px 0 28px; color: rgba(255, 255, 255, 0.72); background: #051f29; }
+
+    .footer-top {
+      display: grid;
+      align-items: start;
+      gap: 40px;
+      padding-bottom: 34px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      grid-template-columns: 1.4fr 0.8fr 0.8fr;
+    }
+
+    .footer-brand p { max-width: 420px; margin: 20px 0 0; color: rgba(255, 255, 255, 0.57); font-size: 0.9rem; }
+    .footer-column h3 { margin-bottom: 14px; color: var(--white); font-size: 0.95rem; letter-spacing: 0; }
+    .footer-links { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; font-size: 0.9rem; }
+    .footer-links a:hover { color: var(--water-light); }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding-top: 26px;
+      font-size: 0.78rem;
+    }
+
+    .footer-bottom p { margin: 0; }
+
+    .mobile-call {
+      position: fixed;
+      z-index: 950;
+      right: 18px;
+      bottom: 18px;
+      display: none;
+      width: 58px;
+      height: 58px;
+      place-items: center;
+      color: var(--navy);
+      background: var(--sand);
+      border-radius: 50%;
+      box-shadow: 0 14px 34px rgba(8, 47, 61, 0.24);
+    }
+
+    .mobile-call svg { width: 25px; height: 25px; }
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+
+    [data-reveal].revealed { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1040px) {
+      .nav-links { gap: 18px; }
+      .nav-links a:not(.btn) { font-size: 0.87rem; }
+      .hero-inner { gap: 34px; grid-template-columns: minmax(0, 1.05fr) minmax(330px, 0.75fr); }
+      .trust-grid { grid-template-columns: repeat(2, 1fr); }
+      .trust-item:nth-child(2) { border-right: 0; }
+      .trust-item:nth-child(-n + 2) { border-bottom: 1px solid var(--line); }
+      .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .process-step:nth-child(2)::after { display: none; }
+    }
+
+    @media (max-width: 860px) {
+      .section { padding: 82px 0; }
+
+      .nav-links {
+        position: fixed;
+        z-index: 999;
+        top: 82px;
+        right: 20px;
+        left: 20px;
+        display: none;
+        max-height: calc(100vh - 106px);
+        align-items: stretch;
+        overflow-y: auto;
+        padding: 22px;
+        border: 1px solid rgba(255, 255, 255, 0.13);
+        background: rgba(8, 47, 61, 0.985);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+        flex-direction: column;
+      }
+
+      .nav-links.open { display: flex; }
+      .nav-links a:not(.btn) { display: block; padding: 12px 4px; font-size: 1rem; }
+      .menu-toggle { display: inline-flex; }
+      .hero { min-height: auto; }
+      .hero-inner { grid-template-columns: 1fr; padding-top: 140px; padding-bottom: 100px; }
+      .hero-visual { width: min(88%, 480px); margin: 18px auto 0; }
+      .visual-badge { right: -12px; }
+      .about-grid, .contact-grid, .showroom-card { grid-template-columns: 1fr; }
+      .about-grid { gap: 50px; }
+      .about-visual { min-height: 510px; }
+      .showroom-card { padding: 52px; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(calc(100% - 28px), var(--max)); }
+      .section { padding: 68px 0; }
+      .site-header { padding: 8px 0; }
+      .brand-mark { width: 40px; height: 40px; }
+      .wordmark { font-size: 0.96rem; }
+      .wordmark small { font-size: 0.55rem; }
+      .menu-toggle { width: 44px; height: 44px; }
+      .nav-links { top: 72px; right: 14px; left: 14px; }
+      h1 { font-size: clamp(2.8rem, 15vw, 4.2rem); }
+      h2 { font-size: clamp(2.05rem, 10vw, 3rem); }
+      .hero-inner { padding-top: 120px; padding-bottom: 86px; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .hero-actions .btn { width: 100%; }
+      .hero-visual { width: 92%; }
+      .visual-badge { right: -8px; bottom: 28px; width: 140px; min-height: 100px; padding: 18px; }
+      .floating-drop { left: -18px; width: 60px; height: 60px; }
+      .trust-strip { margin-top: -24px; }
+      .trust-grid, .services-grid, .process-grid, .form-grid { grid-template-columns: 1fr; }
+      .trust-item { min-height: 104px; border-right: 0; border-bottom: 1px solid var(--line); }
+      .trust-item:nth-child(3) { border-bottom: 1px solid var(--line); }
+      .trust-item:last-child { border-bottom: 0; }
+      .service-card { min-height: 0; padding: 30px; }
+      .service-icon { margin-bottom: 40px; }
+      .about-visual { min-height: 430px; }
+      .pipe-panel { inset: 0 40px 58px 0; }
+      .about-stat { width: 64%; padding: 22px; }
+      .process-step { min-height: 0; }
+      .process-step::after { display: none; }
+      .step-number { margin-bottom: 38px; }
+      .showroom-card { min-height: 0; padding: 38px 26px; border-radius: 26px; }
+      .contact-info, .form-shell { padding: 30px 24px; }
+      .form-footer { align-items: stretch; flex-direction: column; }
+      .form-footer .btn { width: 100%; }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-brand { grid-column: auto; }
+      .footer-bottom { align-items: flex-start; flex-direction: column; }
+      .mobile-call { display: grid; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+      [data-reveal] { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Hopp til innhold</a>
+
+  <header class="site-header" id="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="#top" aria-label="Ofoten Rør – til toppen">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none">
+            <path d="M16 3C11.7 9.4 7 14.3 7 20.2a9 9 0 0 0 18 0C25 14.3 20.3 9.4 16 3Z" fill="currentColor"/>
+            <path d="M11.5 20.5c.6 3.2 2.8 5 5.8 5" stroke="#fff" stroke-width="2.3" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="wordmark">OFOTEN RØR<small>Bad · rør · VVS</small></span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Åpne meny">
+        <svg class="menu-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <svg class="close-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <nav aria-label="Hovedmeny">
+        <ul class="nav-links" id="main-navigation">
+          <li><a href="#tjenester">Tjenester</a></li>
+          <li><a href="#om-oss">Om oss</a></li>
+          <li><a href="#prosess">Slik jobber vi</a></li>
+          <li><a href="#butikk">Butikk</a></li>
+          <li><a class="btn btn--primary" href="#kontakt">Gratis befaring</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <div class="hero-copy" data-reveal>
+          <span class="eyebrow eyebrow--light">Din lokale rørlegger i Narvik</span>
+          <h1 id="hero-title">Trygghet fra første skisse til ferdig bad.</h1>
+          <p>
+            Ofoten Rør hjelper deg med alt fra små serviceoppdrag til komplette bad,
+            våtrom og VVS-løsninger for bolig, hytte og næringsbygg.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="#kontakt">
+              Bestill gratis befaring
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a class="btn btn--ghost" href="tel:+4776945970">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M8.5 4.5 10 8.2 7.8 9.8c1.1 2.5 3.1 4.5 5.6 5.6l1.6-2.2 3.7 1.5c.5.2.8.7.7 1.2l-.4 3c-.1.6-.6 1.1-1.2 1.1C10.2 20 4 13.8 4 6.2c0-.6.5-1.1 1.1-1.2l3-.4c.1 0 .3 0 .4-.1Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              </svg>
+              Ring 76 94 59 70
+            </a>
+          </div>
+
+          <div class="hero-note">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Én lokal samarbeidspartner gjennom hele prosjektet.
+          </div>
+        </div>
+
+        <div class="hero-visual" data-reveal>
+          <div class="floating-drop" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M16 4c-4.5 6.6-8 10.7-8 16a8 8 0 0 0 16 0c0-5.3-3.5-9.4-8-16Z" fill="currentColor"/>
+              <path d="M12 20c.5 2.7 2.3 4 4.7 4" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <div class="visual-card">
+            <svg class="bathroom-art" viewBox="0 0 640 800" role="img" aria-label="Illustrasjon av et moderne baderom">
+              <defs>
+                <linearGradient id="wall" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stop-color="#edf7f8"/>
+                  <stop offset="1" stop-color="#c7e1e5"/>
+                </linearGradient>
+                <linearGradient id="floor" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0" stop-color="#b6d4d9"/>
+                  <stop offset="1" stop-color="#8fb7bf"/>
+                </linearGradient>
+                <linearGradient id="cabinet" x1="0" x2="1">
+                  <stop offset="0" stop-color="#0b4657"/>
+                  <stop offset="1" stop-color="#082f3d"/>
+                </linearGradient>
+                <filter id="bath-shadow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feDropShadow dx="0" dy="15" stdDeviation="14" flood-color="#082f3d" flood-opacity=".18"/>
+                </filter>
+              </defs>
+
+              <rect width="640" height="800" fill="url(#wall)"/>
+              <g opacity=".34" stroke="#7eb0b8" stroke-width="2">
+                <path d="M0 100h640M0 200h640M0 300h640M0 400h640M0 500h640"/>
+                <path d="M106 0v520M212 0v520M318 0v520M424 0v520M530 0v520"/>
+              </g>
+              <path d="M0 515h640v285H0Z" fill="url(#floor)"/>
+              <g opacity=".24" stroke="#587f87" stroke-width="2">
+                <path d="M0 585h640M0 655h640M0 725h640"/>
+                <path d="m80 515-55 285M205 515 170 800M330 515 320 800M455 515l15 285M580 515l50 285"/>
+              </g>
+
+              <g filter="url(#bath-shadow)">
+                <rect x="76" y="454" width="350" height="205" rx="22" fill="url(#cabinet)"/>
+                <path d="M96 454h310v38H96Z" fill="#fff"/>
+                <ellipse cx="251" cy="466" rx="100" ry="22" fill="#e8f4f5"/>
+                <ellipse cx="251" cy="466" rx="72" ry="13" fill="#abcdd2"/>
+                <path d="M265 390v58" stroke="#e4ad69" stroke-width="12" stroke-linecap="round"/>
+                <path d="M265 390h48c18 0 30 12 30 30v14" fill="none" stroke="#e4ad69" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M103 550h296M251 492v167" stroke="#315e6b" stroke-width="3"/>
+                <circle cx="231" cy="570" r="5" fill="#e4ad69"/>
+                <circle cx="271" cy="570" r="5" fill="#e4ad69"/>
+              </g>
+
+              <g filter="url(#bath-shadow)">
+                <rect x="104" y="92" width="294" height="274" rx="147" fill="#0c5365"/>
+                <ellipse cx="251" cy="229" rx="127" ry="117" fill="#c9e6e9"/>
+                <ellipse cx="251" cy="229" rx="110" ry="101" fill="#dff1f3"/>
+                <path d="M172 180c34-43 109-56 162-10" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" opacity=".48"/>
+              </g>
+
+              <g filter="url(#bath-shadow)">
+                <path d="M470 570h118v142c0 35-26 63-59 63s-59-28-59-63Z" fill="#f8fcfc"/>
+                <ellipse cx="529" cy="570" rx="59" ry="18" fill="#d6e9eb"/>
+                <ellipse cx="529" cy="570" rx="40" ry="10" fill="#9dbfc5"/>
+                <rect x="486" y="501" width="86" height="69" rx="20" fill="#fff"/>
+                <circle cx="529" cy="523" r="7" fill="#54c7d7"/>
+              </g>
+
+              <g>
+                <rect x="470" y="160" width="18" height="220" rx="9" fill="#e4ad69"/>
+                <rect x="456" y="145" width="46" height="22" rx="11" fill="#e4ad69"/>
+                <path d="M479 380v58c0 15 12 27 27 27h26" fill="none" stroke="#e4ad69" stroke-width="18" stroke-linecap="round"/>
+                <circle cx="479" cy="260" r="24" fill="#0b4657"/>
+                <circle cx="479" cy="260" r="10" fill="#54c7d7"/>
+              </g>
+
+              <path d="M532 210c-12 18-24 31-24 48a24 24 0 0 0 48 0c0-17-12-30-24-48Z" fill="#54c7d7" opacity=".92"/>
+              <path d="M521 258c2 8 7 12 14 13" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <div class="visual-badge">
+            <strong>40+</strong>
+            <span>år med fagkunnskap i Narvik</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip" aria-label="Fordeler">
+      <div class="container">
+        <div class="trust-grid" data-reveal>
+          <div class="trust-item">
+            <span class="trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3 4.5 6v5.2c0 4.6 3.1 8.2 7.5 9.8 4.4-1.6 7.5-5.2 7.5-9.8V6L12 3Z" stroke="currentColor" stroke-width="1.8"/><path d="m8.5 12 2.2 2.2 4.8-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div><strong>Fagutdannede håndverkere</strong><span>Trygg gjennomføring etter gjeldende krav.</span></div>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 20V9l8-5 8 5v11H4Z" stroke="currentColor" stroke-width="1.8"/><path d="M9 20v-6h6v6M8 10h.01M12 10h.01M16 10h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </span>
+            <div><strong>Komplette bad</strong><span>Én kontaktperson fra plan til ferdig resultat.</span></div>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M5 4h14v16H5V4Z" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h5M8 16h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </span>
+            <div><strong>Gratis befaring</strong><span>Råd og avklaring før du bestemmer deg.</span></div>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3.5 12h17M12 3.5v17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.8"/></svg>
+            </span>
+            <div><strong>Lokal tilstedeværelse</strong><span>Butikk og utstilling sentralt i Narvik.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" id="tjenester" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <span class="eyebrow">Hva vi hjelper deg med</span>
+          <h2 id="services-title">Alt innen bad, rør og VVS.</h2>
+          <p>Fra en dryppende kran til full rehabilitering av våtrom – vi finner en løsning som passer boligen, behovet og budsjettet ditt.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card featured" data-reveal>
+            <span class="service-number" aria-hidden="true">01</span>
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none"><path d="M5 27V12l11-7 11 7v15H5Z" stroke="currentColor" stroke-width="2"/><path d="M10 27v-8h12v8M12 14h8M16 14v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Komplette bad og våtrom</h3>
+            <p>Vi planlegger og koordinerer rørlegger, snekker, flislegger og elektriker, slik at du kun har én samarbeidspartner å forholde deg til.</p>
+            <a class="text-link" href="#kontakt">Be om befaring <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </article>
+
+          <article class="service-card" data-reveal>
+            <span class="service-number" aria-hidden="true">02</span>
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none"><path d="M7 4v9a5 5 0 0 0 5 5h8a5 5 0 0 1 5 5v5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M4 4h6v6H4V4ZM22 22h6v6h-6v-6Z" stroke="currentColor" stroke-width="2"/><path d="M16 10c-2 3-3 4.4-3 6a3 3 0 0 0 6 0c0-1.6-1-3-3-6Z" fill="currentColor"/></svg>
+            </span>
+            <h3>Rørleggerservice</h3>
+            <p>Reparasjon av lekkasjer, tette avløp, sanitærutstyr, blandebatterier, varmtvannsberedere og lekkasjesikring.</p>
+            <a class="text-link" href="tel:+4776945970">Ring rørlegger <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </article>
+
+          <article class="service-card" data-reveal>
+            <span class="service-number" aria-hidden="true">03</span>
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none"><path d="M16 4v24M7.5 9l17 14M24.5 9l-17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="16" r="4" stroke="currentColor" stroke-width="2"/></svg>
+            </span>
+            <h3>Varme og tekniske anlegg</h3>
+            <p>Faglige løsninger for varme, ventilasjon og sanitæranlegg i boliger, hytter, arbeidsplasser og næringsbygg.</p>
+            <a class="text-link" href="#kontakt">Snakk med en fagperson <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </article>
+
+          <article class="service-card" data-reveal>
+            <span class="service-number" aria-hidden="true">04</span>
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none"><path d="M5 7h22v20H5V7Z" stroke="currentColor" stroke-width="2"/><path d="M5 13h22M11 7v20M20 13v14" stroke="currentColor" stroke-width="2"/></svg>
+            </span>
+            <h3>Butikk og baderomsdesign</h3>
+            <p>Se produkter og komplette miljøer i vår ca. 300 m² store butikk. Vi hjelper deg å velge, tegne og visualisere det nye badet.</p>
+            <a class="text-link" href="#butikk">Besøk butikken <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="om-oss" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-visual" data-reveal aria-hidden="true">
+          <div class="pipe-panel">
+            <svg viewBox="0 0 620 700" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <linearGradient id="about-bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#082f3d"/><stop offset="1" stop-color="#0c596b"/></linearGradient>
+                <linearGradient id="copper" x1="0" x2="1"><stop offset="0" stop-color="#c98848"/><stop offset=".45" stop-color="#f0c383"/><stop offset="1" stop-color="#b76e32"/></linearGradient>
+                <filter id="pipe-shadow"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#00151c" flood-opacity=".28"/></filter>
+              </defs>
+              <rect width="620" height="700" fill="url(#about-bg)"/>
+              <g opacity=".12" stroke="#fff"><path d="M0 70h620M0 140h620M0 210h620M0 280h620M0 350h620M0 420h620M0 490h620M0 560h620M0 630h620"/><path d="M70 0v700M140 0v700M210 0v700M280 0v700M350 0v700M420 0v700M490 0v700M560 0v700"/></g>
+              <g filter="url(#pipe-shadow)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M-40 180h210c55 0 90 36 90 90v188c0 54 35 89 90 89h310" stroke="#54c7d7" stroke-width="56"/>
+                <path d="M-40 180h210c55 0 90 36 90 90v188c0 54 35 89 90 89h310" stroke="#c2f0f4" stroke-width="10" opacity=".45"/>
+                <path d="M400-30v214c0 52-34 86-86 86H208" stroke="url(#copper)" stroke-width="52"/>
+                <path d="M400-30v214c0 52-34 86-86 86H208" stroke="#ffe2b9" stroke-width="8" opacity=".5"/>
+              </g>
+              <g transform="translate(400 180)" filter="url(#pipe-shadow)"><circle r="72" fill="#e4ad69"/><circle r="48" fill="#082f3d"/><circle r="16" fill="#54c7d7"/><path d="M0-48V48M-48 0h96" stroke="#e4ad69" stroke-width="12" stroke-linecap="round"/></g>
+              <path d="M120 420c-28 40-50 69-50 101a50 50 0 0 0 100 0c0-32-22-61-50-101Z" fill="#54c7d7"/>
+              <path d="M93 521c4 17 16 27 34 29" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="about-stat"><strong>Én</strong><span>kontaktperson fra idé til ferdig løsning.</span></div>
+        </div>
+
+        <div class="about-copy" data-reveal>
+          <span class="eyebrow">Ofoten Rør</span>
+          <h2 id="about-title">Lokalt håndverk. Varige løsninger.</h2>
+          <p>Vi er en veletablert rørleggerbedrift som har betjent kunder i Narvik-området i over 40 år. Hos oss får du personlig rådgivning, dyktige fagfolk og produkter samlet på ett sted.</p>
+          <p>Målet er enkelt: Prosjektet ditt skal føles oversiktlig, trygt og godt fulgt opp – enten du trenger en liten reparasjon eller skal bygge et helt nytt bad.</p>
+
+          <ul class="check-list">
+            <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="m8 12 2.5 2.5L16.5 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Rådgivning tilpasset behov, stil og budsjett</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="m8 12 2.5 2.5L16.5 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Koordinering av nødvendige håndverksfag</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="m8 12 2.5 2.5L16.5 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Kvalitet, service og trygg utførelse</li>
+          </ul>
+          <a class="btn btn--dark" href="#kontakt">Ta kontakt med oss</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="prosess" aria-labelledby="process-title">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <span class="eyebrow">En ryddig prosess</span>
+          <h2 id="process-title">Slik gjør vi prosjektet enklere.</h2>
+          <p>Du blir fulgt opp fra første samtale til ferdig løsning, med tydelige steg og faglige råd underveis.</p>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-step" data-reveal><span class="step-number">1</span><h3>Befaring</h3><p>Vi kartlegger rommet, behovene dine og hva som er mulig å gjennomføre.</p></article>
+          <article class="process-step" data-reveal><span class="step-number">2</span><h3>Plan og design</h3><p>Vi hjelper med løsninger, produktvalg, tegning og et oversiktlig tilbud.</p></article>
+          <article class="process-step" data-reveal><span class="step-number">3</span><h3>Utførelse</h3><p>Fagfolkene koordineres, og arbeidet gjennomføres i riktig rekkefølge.</p></article>
+          <article class="process-step" data-reveal><span class="step-number">4</span><h3>Ferdig resultat</h3><p>Du får en funksjonell og helhetlig løsning som er klar til bruk.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section--small" id="butikk" aria-labelledby="showroom-title">
+      <div class="container">
+        <div class="showroom-card" data-reveal>
+          <div class="showroom-copy">
+            <span class="eyebrow eyebrow--light">Butikk og utstilling</span>
+            <h2 id="showroom-title">Se, kjenn og sammenlign før du velger.</h2>
+            <p>I vår ca. 300 m² store butikk i Dronningens gate finner du komplette baderomsmiljøer og produkter fra kjente leverandører. Kom innom for inspirasjon og faglige råd – vi har gratis parkering for kunder.</p>
+            <a class="btn btn--primary" href="https://maps.google.com/?q=Dronningens+gate+18,+8514+Narvik" target="_blank" rel="noopener noreferrer">
+              Finn veien
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.4 7-12a7 7 0 1 0-14 0c0 6.6 7 12 7 12Z" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.9"/></svg>
+            </a>
+          </div>
+
+          <div class="showroom-facts" aria-label="Butikkinformasjon">
+            <div class="showroom-fact"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V8l8-4 8 4v12H4Z" stroke="currentColor" stroke-width="1.8"/><path d="M8 20v-7h8v7" stroke="currentColor" stroke-width="1.8"/></svg><span>Ca. 300 m² med baderomsutstillinger</span></div>
+            <div class="showroom-fact"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Man–fre 08.00–16.00 · lør 10.00–14.00</span></div>
+            <div class="showroom-fact"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.4 7-12a7 7 0 1 0-14 0c0 6.6 7 12 7 12Z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg><span>Dronningens gate 18, 8514 Narvik</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="kontakt" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="contact-info" data-reveal>
+          <span class="eyebrow eyebrow--light">Kontakt oss</span>
+          <h2 id="contact-title">La oss snakke om prosjektet ditt.</h2>
+          <p>Ring oss, send en e-post eller bruk skjemaet. Vi hjelper deg gjerne med neste steg og tilbyr gratis befaring og rådgivning.</p>
+
+          <ul class="contact-list">
+            <li><a href="tel:+4776945970"><svg viewBox="0 0 24 24" fill="none"><path d="M8.5 4.5 10 8.2 7.8 9.8c1.1 2.5 3.1 4.5 5.6 5.6l1.6-2.2 3.7 1.5c.5.2.8.7.7 1.2l-.4 3c-.1.6-.6 1.1-1.2 1.1C10.2 20 4 13.8 4 6.2c0-.6.5-1.1 1.1-1.2l3-.4c.1 0 .3 0 .4-.1Z" stroke="currentColor" stroke-width="1.8"/></svg><span><strong>Telefon</strong><span>76 94 59 70</span></span></a></li>
+            <li><a href="mailto:rune@ofotenror.no"><svg viewBox="0 0 24 24" fill="none"><path d="M3 6h18v12H3V6Z" stroke="currentColor" stroke-width="1.8"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span><strong>E-post for befaring</strong><span>rune@ofotenror.no</span></span></a></li>
+            <li><a href="https://maps.google.com/?q=Dronningens+gate+18,+8514+Narvik" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.4 7-12a7 7 0 1 0-14 0c0 6.6 7 12 7 12Z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg><span><strong>Besøksadresse</strong><span>Dronningens gate 18, 8514 Narvik</span></span></a></li>
+            <li><div class="contact-row"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span><strong>Åpningstider</strong><span>Mandag–fredag 08.00–16.00<br>Lørdag 10.00–14.00</span></span></div></li>
+          </ul>
+        </div>
+
+        <div class="form-shell" data-reveal>
+          <h3>Be om en uforpliktende prat</h3>
+          <p class="form-intro">Fyll inn noen korte opplysninger, så åpnes en ferdig e-post du kan sende til oss.</p>
+
+          <form id="contact-form">
+            <div class="form-grid">
+              <div class="field"><label for="name">Navn *</label><input id="name" name="name" type="text" autocomplete="name" required placeholder="Ditt navn"></div>
+              <div class="field"><label for="phone">Telefon *</label><input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="Telefonnummer"></div>
+              <div class="field"><label for="email">E-post</label><input id="email" name="email" type="email" autocomplete="email" placeholder="navn@epost.no"></div>
+              <div class="field"><label for="service">Hva gjelder det?</label><select id="service" name="service"><option>Komplett bad eller våtrom</option><option>Rørleggerservice</option><option>Varme eller teknisk anlegg</option><option>Produkter og butikk</option><option>Annet</option></select></div>
+              <div class="field full"><label for="message">Fortell kort om behovet</label><textarea id="message" name="message" placeholder="For eksempel rom, ønsket løsning og når du ønsker arbeidet utført."></textarea></div>
+            </div>
+
+            <div class="form-footer">
+              <p class="form-note">Når du trykker «Lag e-post», åpnes e-postprogrammet ditt. Ingen opplysninger lagres på nettsiden.</p>
+              <button class="btn btn--dark" type="submit">Lag e-post <svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4V5Z" stroke="currentColor" stroke-width="1.8"/><path d="m5 6 7 6 7-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand" href="#top" aria-label="Ofoten Rør – til toppen">
+            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M16 3C11.7 9.4 7 14.3 7 20.2a9 9 0 0 0 18 0C25 14.3 20.3 9.4 16 3Z" fill="currentColor"/><path d="M11.5 20.5c.6 3.2 2.8 5 5.8 5" stroke="#fff" stroke-width="2.3" stroke-linecap="round"/></svg></span>
+            <span class="wordmark">OFOTEN RØR<small>Bad · rør · VVS</small></span>
+          </a>
+          <p>Lokal rørlegger og totalleverandør innen bad og VVS for bolig, hytte og næringsbygg i Narvik-området.</p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Snarveier</h3>
+          <ul class="footer-links"><li><a href="#tjenester">Tjenester</a></li><li><a href="#om-oss">Om oss</a></li><li><a href="#prosess">Slik jobber vi</a></li><li><a href="#butikk">Butikk</a></li><li><a href="#kontakt">Kontakt</a></li></ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Kontakt</h3>
+          <ul class="footer-links"><li><a href="tel:+4776945970">76 94 59 70</a></li><li><a href="mailto:rune@ofotenror.no">rune@ofotenror.no</a></li><li>Dronningens gate 18</li><li>8514 Narvik</li></ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom"><p>© <span id="year"></span> Ofoten Rør AS · Org.nr. 968 277 898</p><p>Trygghet · service · kvalitet</p></div>
+    </div>
+  </footer>
+
+  <a class="mobile-call" href="tel:+4776945970" aria-label="Ring Ofoten Rør">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M8.5 4.5 10 8.2 7.8 9.8c1.1 2.5 3.1 4.5 5.6 5.6l1.6-2.2 3.7 1.5c.5.2.8.7.7 1.2l-.4 3c-.1.6-.6 1.1-1.2 1.1C10.2 20 4 13.8 4 6.2c0-.6.5-1.1 1.1-1.2l3-.4c.1 0 .3 0 .4-.1Z" stroke="currentColor" stroke-width="1.9"/></svg>
+  </a>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Plumber",
+    "name": "Ofoten Rør AS",
+    "description": "Rørlegger og totalleverandør innen bad og VVS i Narvik.",
+    "url": "https://www.ofotenror.no/",
+    "telephone": "+47 76 94 59 70",
+    "email": "rune@ofotenror.no",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Dronningens gate 18",
+      "postalCode": "8514",
+      "addressLocality": "Narvik",
+      "addressCountry": "NO"
+    },
+    "areaServed": "Narvik og omegn"
+  }
+  </script>
+
+  <script>
+    (() => {
+      const header = document.getElementById('site-header');
+      const menuButton = document.querySelector('.menu-toggle');
+      const nav = document.getElementById('main-navigation');
+      const navLinks = [...nav.querySelectorAll('a[href^="#"]')];
+      const revealItems = document.querySelectorAll('[data-reveal]');
+      const sections = [...document.querySelectorAll('main section[id]')];
+      const form = document.getElementById('contact-form');
+
+      const setHeaderState = () => header.classList.toggle('scrolled', window.scrollY > 16);
+
+      const closeMenu = () => {
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Åpne meny');
+        nav.classList.remove('open');
+        header.classList.remove('menu-active');
+        document.body.classList.remove('menu-open');
+      };
+
+      menuButton.addEventListener('click', () => {
+        const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', String(!isOpen));
+        menuButton.setAttribute('aria-label', isOpen ? 'Åpne meny' : 'Lukk meny');
+        nav.classList.toggle('open', !isOpen);
+        header.classList.toggle('menu-active', !isOpen);
+        document.body.classList.toggle('menu-open', !isOpen);
+      });
+
+      navLinks.forEach(link => link.addEventListener('click', closeMenu));
+      window.addEventListener('resize', () => { if (window.innerWidth > 860) closeMenu(); });
+      window.addEventListener('scroll', setHeaderState, { passive: true });
+      setHeaderState();
+
+      if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+
+        revealItems.forEach(item => revealObserver.observe(item));
+
+        const navObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`));
+          });
+        }, { rootMargin: '-35% 0px -58% 0px', threshold: 0 });
+
+        sections.forEach(section => navObserver.observe(section));
+      } else {
+        revealItems.forEach(item => item.classList.add('revealed'));
+      }
+
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+
+        const data = new FormData(form);
+        const name = data.get('name') || '';
+        const phone = data.get('phone') || '';
+        const email = data.get('email') || '';
+        const service = data.get('service') || '';
+        const message = data.get('message') || '';
+
+        const subject = `Forespørsel fra nettsiden – ${service}`;
+        const body = [
+          'Hei Ofoten Rør,',
+          '',
+          `Jeg ønsker en uforpliktende prat om: ${service}.`,
+          '',
+          message ? `Kort beskrivelse:\n${message}` : 'Kort beskrivelse: Ikke oppgitt.',
+          '',
+          `Navn: ${name}`,
+          `Telefon: ${phone}`,
+          `E-post: ${email || 'Ikke oppgitt'}`,
+          '',
+          'Vennlig hilsen',
+          name
+        ].join('\n');
+
+        window.location.href = `mailto:rune@ofotenror.no?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      });
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
