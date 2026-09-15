@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#0b0f13">
+<title>Taralsvika hybel 3D</title>
+<style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#0b0f13}iframe{position:fixed;inset:0;width:100%;height:100%;border:0;background:#0b0f13}
+</style>
+</head>
+<body>
+<iframe id="app" src="index.html" allow="fullscreen; autoplay" allowfullscreen></iframe>
+<script>
+const frame=document.getElementById('app');
+function forceOpen(){
+  try{
+    const d=frame.contentDocument||frame.contentWindow.document;
+    const start=d.getElementById('start');
+    if(start){start.style.setProperty('display','none','important');start.style.pointerEvents='none';}
+    const ui=d.getElementById('ui');
+    if(ui) ui.classList.add('walk');
+    const hint=d.getElementById('hint');
+    if(hint) hint.textContent='Venstre joystick går. Sveip på høyre side for å se rundt.';
+  }catch(e){}
+}
+frame.addEventListener('load',()=>{forceOpen();setTimeout(forceOpen,300);setTimeout(forceOpen,1200);});
+setInterval(forceOpen,1500);
+</script>
+</body>
+</html>
